@@ -1,0 +1,499 @@
+<!doctype html>
+<html>
+<head>
+<title>Project</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- JQuery UI.Addon to Jquery Library -->
+<link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+
+<!-- Custom CSS -->
+<link rel ="stylesheet" href = "abc.css">
+<link rel ="stylesheet" href = "media.css">
+
+</head>
+<body id = "main">
+
+	<iframe id = "iframe1" src="https://www.youtube.com/embed/kVzBg7XYMV4"></iframe>
+	
+	
+	<!-- Show/Hide map -->
+	<iframe id  = "iframe" scrolling = "no"></iframe>
+	<button class = "button">Locate us</button>
+	<!-- End of Show/Hide map -->
+	
+	<!-- Start of order -->
+	<div id = "order">
+		<img src = "Images/order.png" alt = "bulk order" id = "bulk"/>
+		<form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate>
+			<p>Drop your Details</p>
+			<div class="form-group">
+				<label for="name"></label>
+				<input type="text" class="form-control" id="name" placeholder="Enter Name" ng-model="user" name = "user" required />
+				<p ng-show="myForm.user.$error.required">Name is required</p>
+			</div>
+			<div class="form-group">
+				<label for="email"></label>
+				<input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="email" name = "email" required />
+				<p ng-show="myForm.email.$error.required || myForm.email.$error.email" id  = "p2">Invalid Email</p>
+			</div>
+			<button type="submit" class="btn btn-default" ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid" id = "sub">Submit</button>
+  <p id = "p1">We will get back to you</p>
+  </form>
+	</div>
+	<!-- End of orders -->
+
+<!-- Start of main container -->
+<div class = "container">
+		<!-- Row1 -->
+	<div class = "row" >
+	
+		<div class = "col-lg-3">
+			<a href = "project.html"><img src = "Images/shoe.jpg" alt = "company-logo" id = "logo"/></a>
+		</div>
+		
+		<div class = "col-lg-5">
+			<form class="form-inline">
+				<p id = "welcome">Shoe Bazaar</p>
+				<p id = "welcome1">America's largest Online Designer Shoes</p>
+				<input type="text" class="form-control" value="" placeholder = "Search Shoes Category here..." size = "35" id = "autocomplete"/>
+				<button type="submit" class="btn" id = "button">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+				<div id = "nosearch"></div>	
+				
+			</form>
+			
+		</div>
+		
+		<div class = "col-lg-4">
+			<div id = "social-icon">
+				<a href = "https://www.facebook.com/paperboy27" target = "_blank"><img src = "Images/fb1.png" alt = "facebook" id ="fb"/></a>
+				<a href = "https://twitter.com/narendramodi" target = "_blank"><img src = "Images/tw1.png" alt = "twitter" id ="tw"/></a>
+				<a href = "https://www.linkedin.com/in/bhaveshppatel27" target = "_blank"><img src = "Images/link1.png" alt = "linkedIn" id ="link"/></a>
+				<a href = "https://www.instagram.com/aldo_shoes/?hl=en" target = "_blank"><img src = "Images/insta1.png" alt = "instagram" id ="insta"/></a>
+				<a href = "https://plus.google.com/+TOMS" target = "_blank"><img src = "Images/gplus1.png" alt = "google" id ="gplus"/></a>
+				<a href = "https://www.pinterest.com/explore/shoes/" target = "_blank"><img src = "Images/pint1.png" alt = "pinterest" id ="pint"/></a>
+			</div>
+			<div id = "cart">
+			<a href = "#"><img src = "Images/login.png" alt = "login" data-toggle="modal" data-target="#myModal" id = "log"/></a>
+			
+			
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><span class = "glyphicon glyphicon-log-in"> Login</span></h4>
+      </div>
+      <div class="modal-body">
+        <form>
+			<div class="form-group">
+				<label for="name"><span class="glyphicon glyphicon-user" id = "spanx"></span></label>
+				<input type="text" class="form-control" id="username" placeholder="Enter Username" />
+			</div>
+			<div class="form-group">
+				<label for="email"><span class="glyphicon glyphicon-lock" id = "spany"></span></label>
+				<input type="password" class="form-control" id="password" placeholder="Enter Password" />
+			</div>
+			<p id = "login"></p>
+			<button type="submit" class="btn btn-info" id = "submit"><span class = "glyphicon glyphicon-log-in"> Login</button>
+  </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+			
+			
+			<a href = "#"><img src = "Images/wishlist.png" alt = "wishlist" data-toggle="modal" data-target="#myModal2" /></a>
+			
+			<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" id = "close">&times;</button>
+        <h4 class="modal-title">Whislist under maintenance</h4>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+			
+			
+			
+			<a href = "#"><img src = "Images/cart.png" alt = "cart" data-toggle="modal" data-target="#myModal1"/></a>
+			
+
+
+<!-- Modal -->
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" id = "close">&times;</button>
+        <h4 class="modal-title">Cart Details</h4>
+      </div>
+      <div class="modal-body1">	
+        <p id = "cart_details"></p>
+		<button type="button" class="btn btn-info" id = "undo">Undo Empty</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id = "checkout">Check Out</button>
+		<button type="button" class="btn btn-warning" id = "empty">Empty Cart</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+			
+			
+			<span id = "cart_count"></span>
+			</div>
+			<div id = "user"></div>
+		</div>
+		
+	</div>
+	<!-- End Row1 -->
+	
+	<!-- Row2 -->
+	<div class = "row">
+	
+		<div class = "col-lg-12">
+		<hr />
+			<div id = "menu_bar">
+				<ul class="nav navbar-nav">
+					<li class="active dropdown"><a href="project.html">Home</a></li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Latest
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Superman</a></li>
+							<li><a href="#">Spiderman</a></li>
+							<li><a href="#">Batman</a></li> 
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Designer Shoes
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Scenary</a></li>
+							<li><a href="#">Texture</a></li>
+							<li><a href="#">Designers Shoes</a></li> 
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Gender
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Male</a></li>
+							<li><a href="#">Female</a></li>
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">New Arrivals
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" id = "ads">Canvas Low</a></li>
+							<li><a href="#">Canvas Mid</a></li>
+							<li><a href="#">Canvas HighPO</a></li> 
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Custom Design
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Upload designs</a></li>
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Category
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Cartoon</a></li>
+							<li><a href="#">Doraemon</a></li>
+							<li><a href="#">Shinchan</a></li> 
+						</ul>
+					</li>
+					
+				</ul>
+			</div>
+		<hr />
+		</div>
+		
+	</div>
+	<!-- End Row2 -->
+	
+	<div class = "row">
+		<div class = "col-lg-12" id = "directory">
+		</div>
+	</div>
+	
+	<!-- Row3 -->
+	<div class = "row">
+		<div class = "col-lg-12">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="Images/s1.jpg" alt="Image1">
+    </div>
+
+    <div class="item">
+      <img src="Images/s2.jpg" alt="Image2">
+    </div>
+
+    <div class="item">
+      <img src="Images/s3.jpg" alt="Image3">
+    </div>
+
+    <div class="item">
+      <img src="Images/s4.jpg" alt="Image4">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+		</div>
+	</div>
+	<!-- End Row3 -->
+	
+	<!-- Row4 -->
+	<div class = "row" id = "display">
+		<div class = "col-lg-4 col-md-4 col-sm-4">
+			<img src = "Images/display_shoe1.jpg" alt = "shoe1" class = "img-responsive" />
+		</div>
+		<div class = "col-lg-4 col-md-4 col-sm-4">
+			<img src = "Images/display_shoe2.jpg" alt = "shoe2" class = "img-responsive" />
+		</div>
+		<div class = "col-lg-4 col-md-4 col-sm-4">
+			<img src = "Images/display_shoe3.jpg" alt = "shoe3" class = "img-responsive" />
+		</div>
+	</div>
+	<!-- End Row4 -->
+	
+	<!-- Row5 -->
+	<div class = "row" id = "feature2">
+		<div class = "col-lg-4">
+		<h2>Featured Products</h2>
+		</div>
+		
+		<div class = "col-lg-8">
+			<span id = "span1">Select Category</span>
+			<form>
+			<label class="radio-inline">
+				<input type="radio" name="category" value="cartoon"><span class = "span2">Cartoon</span>
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="category" value="texture"><span class = "span2">Texture</span>
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="category" value="sports"><span class = "span2">Sports</span>
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="category" value="superhero"><span class = "span2">SuperHeroes</span>
+			</label>
+		</form>
+		</div>
+
+	</div>
+	<!-- End Row5 -->
+
+	<!-- Row6 -->
+	<div class = "row" id = "row6">
+	
+		<div class = "col-lg-3 col-md-6 col-sm-6 col-xs-12">
+			<img src = "Images/img1.jpg" alt = "shoe1" id = "a1" class = "az image-popup-no-margins"/>
+			<div class = "info">
+				<h2><a href = "#">Green Pepper Customized</a></h2>
+				<div>Splash some color..  <span class = "p4">Added to cart</span></div>
+				<div class ="price">
+					<p class ="old"><span>Price : </span><span>$ 1500</span></p>
+					<p class = "new">Now : $ 1000</p>
+				</div>
+				<button class = "button aTC" onmouseover = "myFunction1(this)" onmouseout = "myFunction2(this)"><span> Add to Cart </span><span class ="glyphicon glyphicon-shopping-cart"></span></button>
+				
+			</div>
+		</div>
+		
+		<div class = "col-lg-3 col-md-6 col-sm-6 col-xs-12">
+			<img src = "Images/img2.jpg" alt = "shoe2" id = "a2" class = "az"/>
+			<div class = "info">
+				<h2><a href = "#">Yellow Mellow Customized</a></h2>
+				<div>Splash some color..  <span class = "p4">Added to cart</span></div>
+				<div class ="price">
+					<p class ="old"><span>Price : </span><span>$ 1500</span></p>
+					<p class = "new">Now : $ 1000</p>
+				</div>
+				<button class = "button aTC" onmouseover = "myFunction1(this)" onmouseout = "myFunction2(this)"><span> Add to Cart </span><span class ="glyphicon glyphicon-shopping-cart"></span></button>
+			</div>
+		</div>
+		
+		<div class = "col-lg-3 col-md-6 col-sm-6 col-xs-12">
+			<img src = "Images/img3.jpg" alt = "shoe3" id = "a3" class = "az" />
+			<div class = "info">
+				<h2><a href = "#">Tree Leaves Customized</a></h2>
+				<div>Splash some color..  <span class = "p4">Added to cart</span></div>
+				<div class ="price">
+					<p class ="old"><span>Price : </span><span>$ 1500</span></p>
+					<p class = "new">Now : $ 1000</p>
+				</div>
+				<button class = "button aTC" onmouseover = "myFunction1(this)" onmouseout = "myFunction2(this)"><span> Add to Cart </span><span class ="glyphicon glyphicon-shopping-cart"></span></button>
+			</div>
+		</div>
+		
+		<div class = "col-lg-3 col-md-6 col-sm-6 col-xs-12">
+			<img src = "Images/img4.jpg" alt = "shoe4" id = "a4" class = "az"/>
+			<div class = "info">
+				<h2><a href = "#">Kisses Customized</a></h2>
+				<div>Splash some color..  <span class = "p4">Added to cart</span></div>
+				<div class ="price">
+					<p class ="old"><span>Price : </span><span>$ 1500</span></p>
+					<p class = "new">Now : $ 1000</p>
+				</div>
+				<button class = "button aTC" onmouseover = "myFunction1(this)" onmouseout = "myFunction2(this)"><span> Add to Cart </span><span class ="glyphicon glyphicon-shopping-cart"></span></button>
+			</div>
+		</div>
+	</div>
+	<!-- End Row6 -->
+
+	<!-- Row7 -->
+	<div class = "row">
+		<div class = "col-lg-7">
+			<h2 class = "aboutUs">About Shoe Bazaar</h2>
+			<p>ShoesBazaar has teamed up with the nation's leading merchants and suppliers. We developed this Web site
+			to help you find the shoes, footwear and related accessories you want and need at the best prices on the Internet.
+			A shoe is an item of footwear intended to protect and comfort the human foot while doing various activities. 
+			Shoes are also used as an item of decoration.</p>
+		</div>
+		<div class = "col-lg-5">
+		<form class="form-inline" id = "prevent">
+			<h2 class = "aboutUs">NewsLetters</h2>
+			<p >Stay in touch for updates on new designs,offers and discounts</p>
+			<input type="text" class="form-control" id = "input1" value="" placeholder = "Email Id..." size = "35" onKeyUp="validate(this.value)" onblur = "fun()" onfocus = "fun1(this.value)"/>
+			<button type="submit" class="btn disabled" id = "news">
+				<span class ="glyphicon glyphicon-send"></span>
+			</button>
+			<p id = "validation"></p>
+		</form>
+		
+		</div>
+	</div>
+	<hr />
+	<!-- End Row7 -->
+
+	
+	<!-- Row8 -->
+	<div class = "row">
+		<div class = "col-lg-2 col-md-2 col-sm-4 col-xs-4">
+			<div class = "footer">COMPANY</div>
+			<div class = "footer_details">
+				<ul>
+					<li><a href = "#">Affiliate Program</a></li>
+					<li><a href = "#">Work with us</a></li>
+					<li><a href = "#">Blog</a></li>
+					<li><a href = "#">Press</a></li>
+					<li><a href = "#">Contact us</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class = "col-lg-2 col-md-2 col-sm-4 col-xs-4">
+			<div class = "footer">HELP</div>
+			<div class = "footer_details">
+				<ul>
+					<li><a href = "#">Size Chart</a></li>
+					<li><a href = "#">Check you order</a></li>
+					<li><a href = "#">FAQ's</a></li>
+					<li><a href = "#">Payment</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class = "col-lg-2 col-md-2 col-sm-4 col-xs-4">
+			<div class = "footer">POLICIES</div>
+			<div class = "footer_details">
+				<ul>
+					<li><a href = "#">Security</a></li>
+					<li><a href = "#">Shipping</a></li>
+					<li><a href = "#">Privacy policy</a></li>
+					<li><a href = "#">Terms of use</a></li>
+					<li><a href = "#">Cancellation and Return</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class = "col-lg-2 col-md-2 col-sm-4 col-xs-4">
+			<div class = "footer">KEEP IN TOUCH</div>
+			<div class = "footer_details">
+				<ul>
+					<li><a href = "#">Facebook</a></li>
+					<li><a href = "#">Twitter</a></li>
+					<li><a href = "#">LinkedIn</a></li>
+					<li><a href = "#">Instagram</a></li>
+					<li><a href = "#">Google+</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class = "col-lg-4 col-md-4 col-sm-8 col-xs-8 col-custom">
+			<iframe src = "social.html"></iframe>
+		</div>
+		<!-- End Row8 -->
+		
+	</div>
+	
+</div>
+<!-- Start of main container -->
+
+<script src="custom.js" ></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope) {
+    $scope.user = 'XYZ';
+    $scope.email = 'showbazar@gmail.com';
+});
+</script>
+</body>
+</html>

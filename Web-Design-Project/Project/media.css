@@ -1,0 +1,61 @@
+
+@media screen and (max-width: 480px) {
+
+	#input1 {
+        width:200px;
+		float:left;
+    }
+	#autocomplete {
+        width:200px;
+		float:left;
+    }
+	.col-custom iframe{
+		display:none;
+	}
+
+}
+@media screen and (min-width: 480px) and (max-width: 1200px) {
+
+	#input1 {
+        width:300px;
+		float:left;
+    }
+	#autocomplete {
+        width:300px;
+		float:left;
+    }
+	
+}
+
+@media screen and (max-width: 1200px) {
+
+	#social-icon{
+		margin-top:10px;
+	}
+	#cart_count{
+
+	position:absolute;
+	left:295px;
+	top:35px;
+	}
+	
+}
+@media screen and (max-width: 780px){
+	#order{
+		display:none;
+	}
+}
+@media screen and (max-width: 1750px){
+	#iframe,#iframe ~ .button{
+		display:none;
+	}
+	#iframe1{
+		display:none;
+	}
+}
+@media screen and (max-width: 1900px){
+
+	#iframe1{
+		display:none;
+	}
+}
